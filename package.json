@@ -1,0 +1,33 @@
+{
+  "name": "dsh-vision-route",
+  "version": "0.4.0",
+  "description": "Vision-as-a-tool for DSH: keep text-only main models, answer images through a configurable multimodal tool call",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-llm": "^0.1.5-rc.1",
+    "@deepseek-ai/dsh-settings": "^0.1.5-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.1",
+    "@deepseek-ai/schemastery": "^3.18.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "scripts": {
+    "build:client": "node scripts/build-client.mjs",
+    "test": "node scripts/smoke.mjs"
+  },
+  "license": "MIT",
+  "keywords": ["dsh", "deepseek-harness", "plugin", "vision", "multimodal", "tool", "settings"]
+}

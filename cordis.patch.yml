@@ -1,0 +1,8 @@
+# dsh-vision-route 组合包自带 patch:dsh plugin add 后,本文件作为组合包层
+# 自动生效(插件页 Installed 组出现 dsh-vision-route,开关即启用状态)。
+# 用户无需手工合并 insert 段;个性化参数(visionModel 等)走设置页
+# 「视觉路由 vision-route」卡片,或在本机 profile cordis.patch.yml 里做
+# id 定向 config 覆盖(优先级:schema 默认 < 行 config < 设置页用户层):
+- insert:
+    - id: vision-route
+      name: dsh-vision-route
